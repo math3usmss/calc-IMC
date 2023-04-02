@@ -1,35 +1,26 @@
 const form = document.querySelector("form");
 const campo_resultado = document.querySelector(".campo_resultado");
-
-const peso = document.getElementById("peso").value;
-const altura = document.getElementById("altura").value;
 var resultado = document.getElementById("resultado");
 
-const calculo = peso * (altura * altura);
-
 function calcular_imc() {
-  switch (true) {
-    case calculo < 18.5:
-      resultado.innerHTML = "Abaixo do peso normal";
-      break;
-    case calculo > 18.5 && calculo <= 24.9:
-      resultado.innerHTML = "Peso normal";
-      break;
-    case calculo > 25 && calculo <= 29.9:
-      resultado.innerHTML = "Excesso de peso";
-      break;
-    case calculo > 30 && calculo <= 34.9:
-      resultado.innerHTML = "Obesidade I";
-      break;
-    case calculo > 35 && calculo <= 39.9:
-      resultado.innerHTML = "Obesidade II";
-      break;
-    case calculo >= 40:
-      resultado.innerHTML = "Obesidade III";
-      break;
-    default:
-      resultado.innerHTML = "Erro!! tente novamente";
-      break;
+  const peso = document.getElementById("peso").value;
+  const altura = document.getElementById("altura").value / 100;
+  var calculo = peso / (altura * altura);
+
+  const imc = calculo.toFixed(2);
+
+  if (imc < 18.5) {
+    resultado.innerHTML = "IMC de " + imc + " Abaixo do peso normal";
+  } else if (imc > 18.5 && imc <= 24.9) {
+    resultado.innerHTML = "IMC de " + imc + " Peso normal";
+  } else if (imc > 25 && imc <= 29.9) {
+    resultado.innerHTML = "IMC de " + imc + " Excesso de peso";
+  } else if (imc > 30 && imc <= 34.9) {
+    resultado.innerHTML = "IMC de " + imc + " Obesidade I";
+  } else if (imc > 35 && imc <= 39.9) {
+    resultado.innerHTML = "IMC de " + imc + " Obesidade II";
+  } else if (imc >= 40) {
+    resultado.innerHTML = "IMC de " + imc + " Obesidade III";
   }
 
   form.style.display = "none";
