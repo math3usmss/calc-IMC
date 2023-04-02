@@ -1,34 +1,24 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: #000;
 }
 
-body{
+body {
   background: #ececec;
 }
 
-form{
-  background: #fff;
-  padding: 40px;
-  border-radius: 8px;
-  position: relative;
-  display: none;
+a{
+  text-decoration: none;
+}
+
+form {
+  display: flex;
   flex-direction: column;
 }
 
-form::after{
-  content: "IMC";
-  position: absolute;
-  color: #c26cca;
-  font-weight: bold;
-  font-size: 2.5rem;
-  right: 20px;
-  top: -23px;
-}
-
-label{
+label {
   display: block;
   margin: 8px 0;
   position: relative;
@@ -37,7 +27,7 @@ label{
   padding-left: 15px;
 }
 
-label::before{
+label::before {
   content: " ";
   width: 10px;
   height: 10px;
@@ -46,7 +36,7 @@ label::before{
   left: 2px;
 }
 
-input{
+input {
   border: 1px solid #d4d4d4;
   border-radius: 10px;
   height: 40px;
@@ -55,12 +45,12 @@ input{
   padding-left: 10px;
 }
 
-input:focus{
+input:focus {
   outline: none;
   border: 1px solid #c26cca;
 }
 
-button{
+button {
   padding: 10px 20px;
   align-self: center;
   margin-top: 20px;
@@ -73,9 +63,38 @@ button{
   cursor: pointer;
 }
 
-.container-grid{
+footer{
+  text-align: center;
+  border-top: 1px solid #c26cca;
+  padding: 20px;
+  background: #fff;
+}
+
+.container-grid {
   display: flex;
   place-content: center;
   place-items: center;
   height: 100vh;
+}
+
+.design_campo {
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.design_campo::after {
+  content: "IMC";
+  position: absolute;
+  color: #c26cca;
+  font-weight: bold;
+  font-size: 2.5rem;
+  right: 20px;
+  top: -23px;
+}
+
+.campo_resultado{
+  display: none;
+  flex-direction: column;
 }

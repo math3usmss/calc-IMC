@@ -12,22 +12,27 @@
 <body>
 
   <main class="container-grid">
-    <form action="">
-      <div>
+    <form class="design_campo">
+      <div class="campo">
         <label for="peso">Peso: (kg)</label>
-        <input type="text" name="peso" id="peso">
+        <input type="number" name="peso" id="peso">
       </div>
-      <div>
-        <label for="altura">Altura: (m e cm)</label>
-        <input type="text" name="altura" id="altura">
+      <div class="campo">
+        <label for="altura">Altura: (cm)</label>
+        <input type="number" name="altura" id="altura">
       </div>
-      <button>Calcular</button>
+      <button type="button" onclick="calcular_imc()">Calcular</button>
     </form>
 
-    <div class="resultado">
-
+    <div class="campo_resultado design_campo">
+      <span id="resultado"></span>
+      <button type="button" onclick="voltar_imc()">Voltar</button>
     </div>
   </main>
+
+  <footer>
+    <a href="github.com/math3usmss">DEV - github/math3usmss</a>
+  </footer>
 
 
 
